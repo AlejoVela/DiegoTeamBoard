@@ -1,8 +1,8 @@
-## download packages 
+## Download packages 
 ```
 npm i
 ```
-## run project
+## Run project
 ```
 npm start
 ```

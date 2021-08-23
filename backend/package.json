@@ -1,0 +1,32 @@
+{
+  "name": "diegoteamboard",
+  "version": "1.0.0",
+  "description": "Backend Teamboard with nodejs and express",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlejoVela/DiegoTeamBoard.git"
+  },
+  "author": "@AlejoVela",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlejoVela/DiegoTeamBoard/issues"
+  },
+  "homepage": "https://github.com/AlejoVela/DiegoTeamBoard#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-multiparty": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "mongoose": "^5.13.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
