@@ -1,1 +1,47 @@
-<p>register works!</p>
+<div class="bgComponent">
+  <div class="form">
+    <mat-card class="card">
+      <mat-card-title> Register User </mat-card-title>
+      <mat-card-content>
+        <div class="container">
+          <mat-form-field>
+            <input 
+            type="text"
+            [(ngModel)]="registerData.name"
+            matInput
+            placeholder="Name and Lasname"
+            required
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input 
+            type="email"
+            [(ngModel)]="registerData.email"
+            matInput
+            placeholder="Email"
+            required
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input 
+            type="password"
+            [(ngModel)]="registerData.password"
+            matInput
+            placeholder="Password"
+            required
+            />
+          </mat-form-field>
+        </div>
+        <mat-card-actions>
+          <button 
+          (clic)="registerUser()"
+          class="button colorButton"
+          mat-raised-button
+          >
+          Register
+        </button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

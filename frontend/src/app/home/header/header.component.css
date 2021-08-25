@@ -1,0 +1,10 @@
+.headerSpacer {
+  flex: 1 1 auto;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.bgHeader {
+  background-color: #383d38;
+}
