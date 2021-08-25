@@ -18,9 +18,9 @@ userSchema.methods.generateJWT = function () {
     roleId: this.roleId,
     iat: moment().unix(),
   },
-  process.env.SECRET_KEYWORD
+    process.env.SECRET_KEYWORD
   );
 };
 
-const user = mongoose.model('user', userSchema);
+const user = mongoose.model( 'user', userSchema );
 module.exports = user;
