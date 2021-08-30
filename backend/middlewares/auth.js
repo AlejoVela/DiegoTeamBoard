@@ -4,7 +4,7 @@ const auth = async (req, res, next) => {
   let jwToken = req.header('Authorization');
   if(!jwToken) return res.status(400).send('Authorization denied: No Token');
 
-  jwToken = jwToken.split(' ');
+  jwToken = jwToken.split(' ')[1];
   if(!jwToken) return res.status(400).send('Authorization denied: No Token');
 
   try {
@@ -12,7 +12,7 @@ const auth = async (req, res, next) => {
     req.user = payload;
     next();
   } catch (error) {
-    return res.status(400).send('Authorization denied: Invalid Token');
+    return res.status(400).send('Authorization denied: Invalid Token ' + error);
   }
 };
 

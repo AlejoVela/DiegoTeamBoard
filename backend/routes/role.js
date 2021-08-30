@@ -5,7 +5,7 @@ const ValidateUser = require("../middlewares/validateUser");
 const Admin = require("../middlewares/admin");
 
 router.post(
-  "/createtRole",
+  "/createRole",
   Auth,
   ValidateUser,
   Admin,

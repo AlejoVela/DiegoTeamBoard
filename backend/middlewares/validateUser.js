@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const user = async (req, res, next) => {
   let validId = mongoose.Types.ObjectId.isValid(req.user._id);
-  if(validId) return res.status(400).send('Process Failed: Invalid Token');
+  if(!validId) return res.status(400).send('Process Failed: Invalid Token');
 
   let user = await User.findById(req.user._id);
 

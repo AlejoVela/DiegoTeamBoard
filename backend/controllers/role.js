@@ -14,7 +14,7 @@ const createRole = async (req, res) => {
 
   let result = await role.save();
   if(!result) return res.status(400).send("Error: error to register role");
-  return res.status({ result });
+  return res.status(200).send({ result });
 };
 const listRole = async (req, res) => {
   let role = await Role.find();

@@ -1,9 +1,9 @@
 const upload = async (req, res, next) => {
-  let type = req.files.image.type;
-  if (type == null) {
+  if (req.files.image.type == null) {
     next();
   } else {
-    if (type) {
+    if (req.files.image.type) {
+      let type = req.files.image.type;
       if (
         type !== "image/png" &&
         type !== "image/jpg" &&
@@ -12,7 +12,7 @@ const upload = async (req, res, next) => {
       ) {
         return res
           .status(400)
-          .send("Invalid type: only .png, .jpg, jpeg and .gif");
+          .send("Invalid format: only .png .jpg. jpeg .gif");
       } else {
         next();
       }

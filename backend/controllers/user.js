@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const Role = require("../models/role")
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
@@ -67,7 +68,7 @@ const createAdmin = async (req, res) => {
 };
 
 const login = async (req, res) => {
-  let user = await User.find({ email: req.body.email });
+  let user = await User.findOne({ email: req.body.email });
   if (!user) return res.status(400).send("Wrong email or password");
 
   if (!user.dbStatus) return res.status(400).send("Wrong email or password");
@@ -76,8 +77,8 @@ const login = async (req, res) => {
   if (!hash) return res.status(400).send("Wrong email or password");
 
   try {
-    let jwToken = user.generateJWT();
-    return res.status(200).send({ jwToken });
+    let jwtToken = user.generateJWT();
+    return res.status(200).send({ jwtToken });
   } catch (e) {
     return res.status(400).send("Login Error");
   }

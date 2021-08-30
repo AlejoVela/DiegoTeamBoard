@@ -8,16 +8,14 @@ const ValidateUser = require("../middlewares/validateUser");
 
 router.post(
   "/saveTask",
-  mult,
-  Upload,
   Auth,
   ValidateUser,
   BoardController.saveTask
 );
 router.get("/listTask", Auth, ValidateUser, BoardController.listTask);
-router.put("/updateRole", Auth, ValidateUser, BoardController.updateTask);
+router.put("/updateTask", Auth, ValidateUser, BoardController.updateTask);
 router.delete(
-  "/deleteTask:_id?",
+  "/deleteTask/:_id",
   Auth,
   ValidateUser,
   BoardController.deleteTask
