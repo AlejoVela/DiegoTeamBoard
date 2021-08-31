@@ -28,6 +28,9 @@ export class ListTaskComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.charge();
+  }
+  charge() {
     this._boardService.listTask().subscribe(
       (res) => {
         console.log(res);
@@ -49,6 +52,7 @@ export class ListTaskComponent implements OnInit {
     this._boardService.updateTask(task).subscribe(
       (res) => {
         task.taskStatus = status;
+        this.charge();
       },
       (err) => {
         task.taskStatus = tempStatus;
