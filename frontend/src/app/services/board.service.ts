@@ -25,5 +25,7 @@ export class BoardService {
   deleteTask(board: any) {
     return this._http.delete<any>(this.env + 'board/deleteTask/'+ board._id);
   }
-
+  saveTaskImg(board: any){
+    return this._http.post<any>( this.env + 'board/saveTaskImg', board);
+  }
 }

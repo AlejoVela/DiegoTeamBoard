@@ -23,6 +23,7 @@ const saveTaskImg = async (req, res) => {
   if(!req.body.name || !req.body.description)
     return res.status(400).send('Process Failed: empty fields');
   
+  console.log(req.files.image);
   let imageUrl = '';
   if (req.files !== undefined && req.files.image.type) {
     let url = req.protocol + "://" + req.get('host') + "/";
@@ -75,4 +76,4 @@ const deleteTask = async (req, res) => {
   return res.status(200).send({ message: "Task deleted"});
 };
 
-module.exports = { saveTask, listTask, updateTask, deleteTask };
+module.exports = { saveTask, listTask, updateTask, deleteTask, saveTaskImg };

@@ -21,10 +21,18 @@
               required
             />
           </mat-form-field>
+          <div class="input-group mb-3">
+            <input
+              class="form-control"
+              type="file"
+              (change)="uploadImg($event)"
+            />
+            
+          </div>          
         </div>
         <mat-card-actions>
           <button
-            (click)="saveTask()"
+            (click)="saveTaskImg()"
             class="button colorButton"
             mat-raised-button
           >
